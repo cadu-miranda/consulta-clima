@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="cloudy.png" />
+    <title>SPA Weather API</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <script src="consulta.js" defer></script>
+</head>
+
+<body>
+
+    <div class="form">
+
+        <h1>SPA Weather API</h1>
+        <h1>Caso não possua sua chave API, cadastre-se em: <a href="https://openweathermap.org/api" target="_blank">
+                <span id="link-open-weather">Open Weather API</span>
+            </a>para obter uma.</h1>
+
+        <form name="pesquisa">
+
+            <input type="text" id="chaveAPI" placeholder="Chave da API">
+            <input type="text" id="cidadePais" placeholder="Cidade (ex: Itu)">
+
+            <select id="linguagem">
+                <option value="">Selecione o idioma</option>
+                <option value="pt">Português (Brasil)</option>
+                <option value="en-us">English (US)</option>
+                <option value="es">Español (España)</option>
+            </select>
+        </form>
+
+        <input type="button" class="botao" value="Pesquisar" onclick="recebeConteudo()">
+        <input type="button" class="botao" value="Ver/Esconder" onclick="hideShow()">
+    </div>
+
+    <div class="container">
+
+        <div class="container-out">Localização
+            <div class="container-in nome"></div>
+        </div>
+
+        <div class="container-out">Condição
+            <div class="container-in descricao"></div>
+        </div>
+
+        <div class="container-out">Temperatura
+            <div class="container-in temperatura"></div>
+        </div>
+
+        <div class="container-out">Umidade
+            <div class="container-in umidade"></div>
+        </div>
+
+        <div class="container-out">Latitude
+            <div class="container-in latitude"></div>
+        </div>
+
+        <div class="container-out">Longitude
+            <div class="container-in longitude"></div>
+        </div>
+    </div>
+
+    <iframe class="mapa-site" src="https://maps.google.com/maps?output=svembed" width="300" height="310"
+        allowfullscreen="" loading="lazy"></iframe>
+
+    <div id="timestamps"></div>
+
+    <div class="referencia">Icons made by <a href="https://www.flaticon.com/authors/those-icons"
+            title="Those Icons">Those Icons</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
+
+</body>
+
+</html>
